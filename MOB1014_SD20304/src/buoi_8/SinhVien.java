@@ -103,11 +103,17 @@ public class SinhVien {
 
     @Override
     public String toString() {
-        return "SinhVien{" + "msv=" + msv + ", hoTen=" + hoTen + ", gioiTinh=" + gioiTinh + ", ngaySinh=" + ngaySinh + ", nganhHoc=" + nganhHoc + ", kyHoc=" + kyHoc + ", diem=" + diem + '}';
+        return "SinhVien{" + "msv=" + msv + ", hoTen=" + hoTen 
+                + ", gioiTinh=" + getValueGioiTinh() + ", ngaySinh=" + ngaySinh + ", nganhHoc=" + nganhHoc + ", kyHoc=" + kyHoc + ", diem=" + diem + '}';
     }
     public void inThongTin(){
         System.out.println(toString());
     }
-    
+    public String getValueGioiTinh(){
+        if(gioiTinh){//gioiTinh == true
+            return "Nam";
+        }
+        return "Nữ";
+    }
 
 }
