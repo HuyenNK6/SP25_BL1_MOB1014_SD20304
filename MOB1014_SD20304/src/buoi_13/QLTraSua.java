@@ -12,11 +12,22 @@ import java.util.Scanner;
  * @author Huyen
  */
 public class QLTraSua {
-    Scanner sc= new Scanner(System.in);
-    ArrayList<TraSua> lstTraSuas= new ArrayList<>();
-    public void nhap(){
+
+    Scanner sc = new Scanner(System.in);
+    ArrayList<TraSua> lstTraSuas = new ArrayList<>();
+    //tạo constructor ko tham số=> ctrl cách enter
+    //khởi tạo các dữ liệu mặc định => fake data
+    public QLTraSua() {
+        lstTraSuas.add(new TraSua(1, "TocoToco", 20000, 2, 5, true));
+        lstTraSuas.add(new TraSua(2, "Highland", 45000, 1, 3, true));
+        lstTraSuas.add(new TraSua(3, "Dingtea", 34000, 2, 5, false));
+        lstTraSuas.add(new TraSua(4, "KOI", 80000, 2, 4, false));
+        lstTraSuas.add(new TraSua(5, "Phela", 56000, 1, 2, true));
+    }
+    
+    public void nhap() {
         String tiepTuc;
-        do{
+        do {
             //1. khởi tạo đối tượng mới
             TraSua traSua = new TraSua();
             //2. nhập thông tin
@@ -38,11 +49,35 @@ public class QLTraSua {
             //4. hỏi tiếp tục
             System.out.println("Bạn co muon tiep tuc hay khong(co/khong)");
             tiepTuc = sc.nextLine();
-        }while(tiepTuc.equalsIgnoreCase("co"));
+        } while (tiepTuc.equalsIgnoreCase("co"));
     }
-    public void xuat(){
+
+    public void xuat() {
         for (TraSua ts : lstTraSuas) {
             ts.inThongTin();
         }
+    }
+//    /3.  Tìm kiếm đối tượng theo id => vị trí
+
+    public void timKiemTheoId() {
+        System.out.println("Mời nhập id cần tìm: ");
+        int id = Integer.parseInt(sc.nextLine());
+        //cách 1: for tab
+        for (int i = 0; i < lstTraSuas.size(); i++) {
+            if (id == lstTraSuas.get(i).getId()) {
+                //lstTraSuas.get(i): đối tượng tại vị trí i
+                System.out.println("Đã tìm thấy tại vị trí " + i);
+                lstTraSuas.get(i).inThongTin();
+                return;
+            }
+        }
+        System.out.println("Không tìm thấy!");
+        //cách 2: fore tab
+//        for (TraSua ts : lstTraSuas) {
+//            if(id == ts.getId()){
+//                System.out.println("Đã tìm thấy: ");
+//                ts.inThongTin();
+//            }
+//        }
     }
 }

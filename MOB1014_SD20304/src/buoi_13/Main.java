@@ -33,7 +33,7 @@ public class Main {
                     quanLy.xuat();
                     break;
                 case 3:
-                    //
+                    quanLy.timKiemTheoId();
                     break;
                 case 0:
                     System.out.println("0. Thoát");
