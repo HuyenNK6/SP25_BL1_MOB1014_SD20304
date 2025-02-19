@@ -35,6 +35,19 @@ public class Main {
                 case 3:
                     quanLy.timKiemTheoId();
                     break;
+                case 4:
+                    //quanLy.timKiemTheoHang();
+                    quanLy.timKiemTheoHang2();
+                    break;
+                case 5:
+                    quanLy.suaThongTin();
+                    break;
+                case 8:
+                    quanLy.xoa();
+                    break;
+                case 9:
+                    quanLy.sapXep();
+                    break;
                 case 0:
                     System.out.println("0. Thoát");
                     System.exit(0);
