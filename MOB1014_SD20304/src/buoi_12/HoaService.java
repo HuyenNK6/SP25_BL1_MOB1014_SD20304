@@ -51,4 +51,7 @@ public class HoaService {//QLHoa
             h.inThongTin();
         }
     }
+    public void keThua(){
+        //code
+    }
 }

@@ -18,7 +18,7 @@ public class Main {
         HoaService service= new HoaService();
         service.nhap();
         service.xuat();
-        
+        service.keThua();
        
     }
 }
